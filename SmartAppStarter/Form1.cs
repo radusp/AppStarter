@@ -9,13 +9,17 @@ namespace SmartAppStarter
 {
     public partial class Form1 : Form
     {
-
+        int currentPosQuickView = 700;
+        const int widthOfQuickView = 370;
         bool SandBoxValidator = false;
         CoreParameters diskloaderProps;
         GuiParameters guiProps;
         MakePyParameters makePiPropsCompile;
        // AutoCompleteStringCollection makepyCmdSource;
         AutoCompleteStringCollection componentSource = new AutoCompleteStringCollection();
+
+        Point mousePosRelease;
+        Point mousePosClick;
 
         public Form1()
         {
@@ -355,9 +359,9 @@ namespace SmartAppStarter
 
         private void btnSwitchToQuickView_Click(object sender, EventArgs e)
         {
-            Size = new System.Drawing.Size(330, 80);
+            Size = new System.Drawing.Size(widthOfQuickView, 80);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Location = new Point(700, 0);
+            this.Location = new Point(currentPosQuickView, 0);
             this.TopMost = true;
         }
 
@@ -426,6 +430,60 @@ namespace SmartAppStarter
             makePiPropsCompile = new MakePyParameters();
             makePiPropsCompile.operation = "compile";
             makePiPropsCompile.component = txtComponent.Text;
+        }
+
+        private void btnMoveForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            mousePosRelease = Cursor.Position;
+            if (isMoveOnTheRight())
+            {
+                manageMoveToTheRight();
+            }
+            else
+            {
+                manageMoveToTheLeft();
+            }
+        }
+
+        private void manageMoveToTheLeft()
+        {
+            int finPoswidth = 0;
+            int valueToResize = mousePosClick.X - mousePosRelease.X;
+            finPoswidth = currentPosQuickView - valueToResize;
+            if (finPoswidth < 0)
+            {
+                this.Location = new Point(2, 0);
+                currentPosQuickView = 2;
+            }
+            else
+            {
+                this.Location = new Point(finPoswidth, 0);
+                currentPosQuickView = finPoswidth;
+            }
+        }
+
+        private void manageMoveToTheRight()
+        {
+            int finPosWidth = currentPosQuickView + (mousePosRelease.X - mousePosClick.X);
+            currentPosQuickView = finPosWidth;
+            try
+            {
+                this.Location = new Point(finPosWidth, 0);
+            }
+            catch (Exception eee)
+            {
+                currentPosQuickView = 700;
+            }
+        }
+
+        private bool isMoveOnTheRight()
+        {
+            return mousePosRelease.X > mousePosClick.X;
+        }
+
+        private void btnMoveForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            mousePosClick = Cursor.Position;
         }
     }
 }

@@ -63,6 +63,7 @@
             this.btnQuickStartGUI = new System.Windows.Forms.Button();
             this.btnQuickStartCore = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnMoveForm = new System.Windows.Forms.Button();
             this.gbxDiskloader.SuspendLayout();
             this.grpLoadProject.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -298,6 +299,7 @@
             // 
             // grpQuickView
             // 
+            this.grpQuickView.Controls.Add(this.btnMoveForm);
             this.grpQuickView.Controls.Add(this.txtMakepyCMD);
             this.grpQuickView.Controls.Add(this.txtComponent);
             this.grpQuickView.Controls.Add(this.btnCompile);
@@ -308,7 +310,7 @@
             this.grpQuickView.Controls.Add(this.btnQuickStartCore);
             this.grpQuickView.Location = new System.Drawing.Point(7, -1);
             this.grpQuickView.Name = "grpQuickView";
-            this.grpQuickView.Size = new System.Drawing.Size(300, 40);
+            this.grpQuickView.Size = new System.Drawing.Size(343, 40);
             this.grpQuickView.TabIndex = 7;
             this.grpQuickView.TabStop = false;
             this.grpQuickView.Text = "Quick View";
@@ -395,6 +397,18 @@
             this.btnQuickStartCore.UseVisualStyleBackColor = true;
             this.btnQuickStartCore.Click += new System.EventHandler(this.btnQuickStartCore_Click);
             // 
+            // btnMoveForm
+            // 
+            this.btnMoveForm.Location = new System.Drawing.Point(302, 11);
+            this.btnMoveForm.Name = "btnMoveForm";
+            this.btnMoveForm.Size = new System.Drawing.Size(35, 23);
+            this.btnMoveForm.TabIndex = 8;
+            this.btnMoveForm.Text = "<-->";
+            this.toolTip1.SetToolTip(this.btnMoveForm, "Move Quick View To the Left and Right");
+            this.btnMoveForm.UseVisualStyleBackColor = true;
+            this.btnMoveForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMoveForm_MouseDown);
+            this.btnMoveForm.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMoveForm_MouseUp);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,6 +421,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.Opacity = 0.3D;
             this.Text = "SmartAppStarter";
             this.gbxDiskloader.ResumeLayout(false);
             this.gbxDiskloader.PerformLayout();
@@ -456,6 +471,7 @@
         private System.Windows.Forms.TextBox txtComponent;
         private System.Windows.Forms.Button btnCompile;
         private System.Windows.Forms.TextBox txtMakepyCMD;
+        private System.Windows.Forms.Button btnMoveForm;
     }
 }
 
