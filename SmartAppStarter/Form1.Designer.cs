@@ -54,6 +54,8 @@
             this.lblGuiPort = new System.Windows.Forms.Label();
             this.lblGUIIP = new System.Windows.Forms.Label();
             this.grpQuickView = new System.Windows.Forms.GroupBox();
+            this.btnQuitApp = new System.Windows.Forms.Button();
+            this.btnMoveForm = new System.Windows.Forms.Button();
             this.txtMakepyCMD = new System.Windows.Forms.TextBox();
             this.txtComponent = new System.Windows.Forms.TextBox();
             this.btnCompile = new System.Windows.Forms.Button();
@@ -63,7 +65,6 @@
             this.btnQuickStartGUI = new System.Windows.Forms.Button();
             this.btnQuickStartCore = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnMoveForm = new System.Windows.Forms.Button();
             this.gbxDiskloader.SuspendLayout();
             this.grpLoadProject.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -141,21 +142,21 @@
             this.txtIP.Location = new System.Drawing.Point(58, 77);
             this.txtIP.Name = "txtIP";
             this.txtIP.Size = new System.Drawing.Size(129, 20);
-            this.txtIP.TabIndex = 8;
+            this.txtIP.TabIndex = 22;
             // 
             // txtDi
             // 
             this.txtDi.Location = new System.Drawing.Point(58, 50);
             this.txtDi.Name = "txtDi";
             this.txtDi.Size = new System.Drawing.Size(129, 20);
-            this.txtDi.TabIndex = 7;
+            this.txtDi.TabIndex = 21;
             // 
             // txtD
             // 
             this.txtD.Location = new System.Drawing.Point(58, 26);
             this.txtD.Name = "txtD";
             this.txtD.Size = new System.Drawing.Size(129, 20);
-            this.txtD.TabIndex = 6;
+            this.txtD.TabIndex = 20;
             // 
             // lblIp
             // 
@@ -270,14 +271,14 @@
             this.txtGuiPort.Location = new System.Drawing.Point(58, 52);
             this.txtGuiPort.Name = "txtGuiPort";
             this.txtGuiPort.Size = new System.Drawing.Size(129, 20);
-            this.txtGuiPort.TabIndex = 10;
+            this.txtGuiPort.TabIndex = 1;
             // 
             // txtGuiIp
             // 
             this.txtGuiIp.Location = new System.Drawing.Point(58, 26);
             this.txtGuiIp.Name = "txtGuiIp";
             this.txtGuiIp.Size = new System.Drawing.Size(129, 20);
-            this.txtGuiIp.TabIndex = 9;
+            this.txtGuiIp.TabIndex = 0;
             // 
             // lblGuiPort
             // 
@@ -299,6 +300,7 @@
             // 
             // grpQuickView
             // 
+            this.grpQuickView.Controls.Add(this.btnQuitApp);
             this.grpQuickView.Controls.Add(this.btnMoveForm);
             this.grpQuickView.Controls.Add(this.txtMakepyCMD);
             this.grpQuickView.Controls.Add(this.txtComponent);
@@ -315,9 +317,37 @@
             this.grpQuickView.TabStop = false;
             this.grpQuickView.Text = "Quick View";
             // 
+            // btnQuitApp
+            // 
+            this.btnQuitApp.Font = new System.Drawing.Font("Segoe Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitApp.ForeColor = System.Drawing.Color.Maroon;
+            this.btnQuitApp.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnQuitApp.Location = new System.Drawing.Point(320, 11);
+            this.btnQuitApp.Name = "btnQuitApp";
+            this.btnQuitApp.Size = new System.Drawing.Size(18, 23);
+            this.btnQuitApp.TabIndex = 12;
+            this.btnQuitApp.Text = "x";
+            this.btnQuitApp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnQuitApp.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.toolTip1.SetToolTip(this.btnQuitApp, "Close the Application");
+            this.btnQuitApp.UseVisualStyleBackColor = true;
+            this.btnQuitApp.Click += new System.EventHandler(this.btnQuitApp_Click);
+            // 
+            // btnMoveForm
+            // 
+            this.btnMoveForm.Location = new System.Drawing.Point(284, 11);
+            this.btnMoveForm.Name = "btnMoveForm";
+            this.btnMoveForm.Size = new System.Drawing.Size(33, 23);
+            this.btnMoveForm.TabIndex = 11;
+            this.btnMoveForm.Text = "<-->";
+            this.toolTip1.SetToolTip(this.btnMoveForm, "Move Quick View To the Left and Right");
+            this.btnMoveForm.UseVisualStyleBackColor = true;
+            this.btnMoveForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMoveForm_MouseDown);
+            this.btnMoveForm.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMoveForm_MouseUp);
+            // 
             // txtMakepyCMD
             // 
-            this.txtMakepyCMD.Location = new System.Drawing.Point(180, 13);
+            this.txtMakepyCMD.Location = new System.Drawing.Point(178, 13);
             this.txtMakepyCMD.Name = "txtMakepyCMD";
             this.txtMakepyCMD.Size = new System.Drawing.Size(48, 20);
             this.txtMakepyCMD.TabIndex = 7;
@@ -325,9 +355,9 @@
             // 
             // txtComponent
             // 
-            this.txtComponent.Location = new System.Drawing.Point(233, 13);
+            this.txtComponent.Location = new System.Drawing.Point(230, 13);
             this.txtComponent.Name = "txtComponent";
-            this.txtComponent.Size = new System.Drawing.Size(63, 20);
+            this.txtComponent.Size = new System.Drawing.Size(51, 20);
             this.txtComponent.TabIndex = 8;
             this.toolTip1.SetToolTip(this.txtComponent, "Component that You want to use");
             // 
@@ -397,22 +427,11 @@
             this.btnQuickStartCore.UseVisualStyleBackColor = true;
             this.btnQuickStartCore.Click += new System.EventHandler(this.btnQuickStartCore_Click);
             // 
-            // btnMoveForm
-            // 
-            this.btnMoveForm.Location = new System.Drawing.Point(302, 11);
-            this.btnMoveForm.Name = "btnMoveForm";
-            this.btnMoveForm.Size = new System.Drawing.Size(35, 23);
-            this.btnMoveForm.TabIndex = 8;
-            this.btnMoveForm.Text = "<-->";
-            this.toolTip1.SetToolTip(this.btnMoveForm, "Move Quick View To the Left and Right");
-            this.btnMoveForm.UseVisualStyleBackColor = true;
-            this.btnMoveForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMoveForm_MouseDown);
-            this.btnMoveForm.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMoveForm_MouseUp);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(645, 205);
             this.Controls.Add(this.grpQuickView);
             this.Controls.Add(this.groupBox1);
@@ -421,7 +440,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Opacity = 0.3D;
             this.Text = "SmartAppStarter";
             this.gbxDiskloader.ResumeLayout(false);
             this.gbxDiskloader.PerformLayout();
@@ -472,6 +490,7 @@
         private System.Windows.Forms.Button btnCompile;
         private System.Windows.Forms.TextBox txtMakepyCMD;
         private System.Windows.Forms.Button btnMoveForm;
+        private System.Windows.Forms.Button btnQuitApp;
     }
 }
 

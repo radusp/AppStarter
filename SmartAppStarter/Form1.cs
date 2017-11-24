@@ -11,11 +11,12 @@ namespace SmartAppStarter
     {
         int currentPosQuickView = 700;
         const int widthOfQuickView = 370;
+        const string nameConfigFileForPath = @"ProjectConfig.sas";       
         bool SandBoxValidator = false;
         CoreParameters diskloaderProps;
         GuiParameters guiProps;
         MakePyParameters makePiPropsCompile;
-       // AutoCompleteStringCollection makepyCmdSource;
+        bool projectPathConfigExists = false;       
         AutoCompleteStringCollection componentSource = new AutoCompleteStringCollection();
 
         Point mousePosRelease;
@@ -26,6 +27,24 @@ namespace SmartAppStarter
             InitializeComponent();
             ShowInTaskbar = false;
             setUpAutoCompleteForMakepyCmd();
+            checkIfConfigFileForPathExists();
+        }
+
+        private void checkIfConfigFileForPathExists()
+        {
+            if (File.Exists(nameConfigFileForPath))
+            {
+                string[] projectPath = File.ReadAllLines(nameConfigFileForPath);
+                if (projectPath.Length > 0)
+                {
+                    if (Directory.Exists(projectPath[0]))
+                    {
+                        Util.myPaths.projectPath = projectPath[0];
+                        projectPathConfigExists = true;
+                        parseReceivedPath();
+                    }
+                }
+            }
         }
 
         private void setUpAutoCompleteForComponent()
@@ -57,30 +76,51 @@ namespace SmartAppStarter
             DialogResult result = folderBrowserDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
-                parseInputFolder();
-                if(SandBoxValidator == true)
-                {
-                    findExecutables();
-                    populateDataSourceForComponent();
+                parseReceivedPath();
+            }
+        }
 
-                    if (SandBoxValidator == true)
-                    {
-                        txtProjectPath.Text = Util.myPaths.projectPath;
-                        lblStatusPath.Text = "OK";
-                        lblStatusPath.ForeColor = Color.Green;
-                        lblStatusPath.Visible = true;
-                    }
-                    else
-                    {
-                        lblStatusPath.Visible = true;
-                    }
+        private void parseReceivedPath()
+        {
+            parseInputFolder();
+            if (SandBoxValidator == true)
+            {
+                findExecutables();
+                populateDataSourceForComponent();
+
+                if (SandBoxValidator == true)
+                {
+                    postvalidationActions();
+                }
+                else
+                {
+                    lblStatusPath.Visible = true;
+                }
+            }
+        }
+
+        private void postvalidationActions()
+        {
+            txtProjectPath.Text = Util.myPaths.projectPath;
+            savePathToFileForNextStartUp();
+            lblStatusPath.Text = "OK";
+            lblStatusPath.ForeColor = Color.Green;
+            lblStatusPath.Visible = true;
+        }
+
+        private void savePathToFileForNextStartUp()
+        {
+            if (SandBoxValidator == true)
+            {
+                using (StreamWriter outputFile = new StreamWriter(@"ProjectConfig.sas"))
+                {
+                    outputFile.WriteLine(Util.myPaths.projectPath);
                 }
             }
         }
 
         private void populateDataSourceForComponent()
         {
-
             try
             {
                 string[] readTextFromExternals = File.ReadAllLines(Util.myPaths.pathToExternalsFile);
@@ -97,7 +137,6 @@ namespace SmartAppStarter
             {
                 MessageBox.Show("Something happened while parsing the external files. You will not have autocomplete for the component field.");
             } 
-
             setUpAutoCompleteForComponent();
         }
 
@@ -110,7 +149,6 @@ namespace SmartAppStarter
             else
             {
                 validatePathsToExecutables();
-
             }
         }
 
@@ -160,8 +198,17 @@ namespace SmartAppStarter
 
         private void parseInputFolder()
         {
-            string[] files = Directory.GetDirectories(folderBrowserDialog1.SelectedPath);
-            Util.myPaths.projectPath = folderBrowserDialog1.SelectedPath;
+            string[] files;
+            if (projectPathConfigExists == true)
+            {
+                files = Directory.GetDirectories(Util.myPaths.projectPath);
+                projectPathConfigExists = false;
+            }
+            else
+            {
+                files = Directory.GetDirectories(folderBrowserDialog1.SelectedPath);
+                Util.myPaths.projectPath = folderBrowserDialog1.SelectedPath;
+            }
             foreach (string str in files)
             {
                 if (str.Contains("_Sandbox_INSTALL"))
@@ -176,7 +223,6 @@ namespace SmartAppStarter
                 notValidSandboxPath();
                 return;
             }
-
         }
 
         private static void notValidSandboxPath()
@@ -273,7 +319,6 @@ namespace SmartAppStarter
             lines.Add(txtD.Text);
             lines.Add(txtDi.Text);
             lines.Add(txtIP.Text);
-
 
             // Write the string array to a new file named "WriteLines.txt".
             using (StreamWriter outputFile = new StreamWriter(@"CoreConfig.sas"))
@@ -484,6 +529,11 @@ namespace SmartAppStarter
         private void btnMoveForm_MouseDown(object sender, MouseEventArgs e)
         {
             mousePosClick = Cursor.Position;
+        }
+
+        private void btnQuitApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
