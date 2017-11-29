@@ -278,9 +278,12 @@ namespace SmartAppStarter
                 MessageBox.Show("Can't have empty fields");
                 return;
             }
-
             setupGuiParameters();
+            startGUIProcess();
+        }
 
+        private void startGUIProcess()
+        {
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.FileName = Util.myPaths.pathToUniVisionGui;
             startInfo.Arguments = @"--connect --ip " + guiProps._ip + @" --port " + guiProps._port;
@@ -288,7 +291,7 @@ namespace SmartAppStarter
             {
                 Process.Start(startInfo);
             }
-            catch(Exception ee)
+            catch (Exception ee)
             {
                 MessageBox.Show("A project must be loaded first");
             }

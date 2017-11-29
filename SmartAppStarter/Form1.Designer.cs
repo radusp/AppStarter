@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnLoadProjPath = new System.Windows.Forms.Button();
             this.txtProjectPath = new System.Windows.Forms.TextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
@@ -58,10 +59,10 @@
             this.btnMoveForm = new System.Windows.Forms.Button();
             this.txtMakepyCMD = new System.Windows.Forms.TextBox();
             this.txtComponent = new System.Windows.Forms.TextBox();
+            this.btnQuickSwitch = new System.Windows.Forms.Button();
             this.btnCompile = new System.Windows.Forms.Button();
             this.btnPathToBin = new System.Windows.Forms.Button();
             this.btnOpenProj = new System.Windows.Forms.Button();
-            this.btnQuickSwitch = new System.Windows.Forms.Button();
             this.btnQuickStartGUI = new System.Windows.Forms.Button();
             this.btnQuickStartCore = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -304,10 +305,10 @@
             this.grpQuickView.Controls.Add(this.btnMoveForm);
             this.grpQuickView.Controls.Add(this.txtMakepyCMD);
             this.grpQuickView.Controls.Add(this.txtComponent);
+            this.grpQuickView.Controls.Add(this.btnQuickSwitch);
             this.grpQuickView.Controls.Add(this.btnCompile);
             this.grpQuickView.Controls.Add(this.btnPathToBin);
             this.grpQuickView.Controls.Add(this.btnOpenProj);
-            this.grpQuickView.Controls.Add(this.btnQuickSwitch);
             this.grpQuickView.Controls.Add(this.btnQuickStartGUI);
             this.grpQuickView.Controls.Add(this.btnQuickStartCore);
             this.grpQuickView.Location = new System.Drawing.Point(7, -1);
@@ -335,7 +336,7 @@
             // 
             // btnMoveForm
             // 
-            this.btnMoveForm.Location = new System.Drawing.Point(284, 11);
+            this.btnMoveForm.Location = new System.Drawing.Point(263, 11);
             this.btnMoveForm.Name = "btnMoveForm";
             this.btnMoveForm.Size = new System.Drawing.Size(33, 23);
             this.btnMoveForm.TabIndex = 11;
@@ -347,7 +348,7 @@
             // 
             // txtMakepyCMD
             // 
-            this.txtMakepyCMD.Location = new System.Drawing.Point(178, 13);
+            this.txtMakepyCMD.Location = new System.Drawing.Point(153, 13);
             this.txtMakepyCMD.Name = "txtMakepyCMD";
             this.txtMakepyCMD.Size = new System.Drawing.Size(48, 20);
             this.txtMakepyCMD.TabIndex = 7;
@@ -355,55 +356,55 @@
             // 
             // txtComponent
             // 
-            this.txtComponent.Location = new System.Drawing.Point(230, 13);
+            this.txtComponent.Location = new System.Drawing.Point(207, 13);
             this.txtComponent.Name = "txtComponent";
             this.txtComponent.Size = new System.Drawing.Size(51, 20);
             this.txtComponent.TabIndex = 8;
             this.toolTip1.SetToolTip(this.txtComponent, "Component that You want to use");
             // 
+            // btnQuickSwitch
+            // 
+            this.btnQuickSwitch.Location = new System.Drawing.Point(302, 11);
+            this.btnQuickSwitch.Name = "btnQuickSwitch";
+            this.btnQuickSwitch.Size = new System.Drawing.Size(17, 23);
+            this.btnQuickSwitch.TabIndex = 2;
+            this.btnQuickSwitch.Text = "_";
+            this.toolTip1.SetToolTip(this.btnQuickSwitch, "Switch View");
+            this.btnQuickSwitch.UseVisualStyleBackColor = true;
+            this.btnQuickSwitch.Click += new System.EventHandler(this.btnQuickSwitch_Click);
+            // 
             // btnCompile
             // 
-            this.btnCompile.Location = new System.Drawing.Point(143, 12);
+            this.btnCompile.Image = ((System.Drawing.Image)(resources.GetObject("btnCompile.Image")));
+            this.btnCompile.Location = new System.Drawing.Point(118, 12);
             this.btnCompile.Name = "btnCompile";
             this.btnCompile.Size = new System.Drawing.Size(31, 23);
             this.btnCompile.TabIndex = 9;
-            this.btnCompile.Text = "PY";
             this.toolTip1.SetToolTip(this.btnCompile, "Run Make.py + specified CMD + Specified Component");
             this.btnCompile.UseVisualStyleBackColor = true;
             this.btnCompile.Click += new System.EventHandler(this.btnCompile_Click);
             // 
             // btnPathToBin
             // 
-            this.btnPathToBin.Location = new System.Drawing.Point(106, 12);
+            this.btnPathToBin.Image = ((System.Drawing.Image)(resources.GetObject("btnPathToBin.Image")));
+            this.btnPathToBin.Location = new System.Drawing.Point(82, 12);
             this.btnPathToBin.Name = "btnPathToBin";
             this.btnPathToBin.Size = new System.Drawing.Size(32, 23);
             this.btnPathToBin.TabIndex = 4;
-            this.btnPathToBin.Text = "PB";
             this.toolTip1.SetToolTip(this.btnPathToBin, "Open Project Bin Path");
             this.btnPathToBin.UseVisualStyleBackColor = true;
             this.btnPathToBin.Click += new System.EventHandler(this.btnPathToBin_Click);
             // 
             // btnOpenProj
             // 
-            this.btnOpenProj.Location = new System.Drawing.Point(71, 12);
+            this.btnOpenProj.Image = ((System.Drawing.Image)(resources.GetObject("btnOpenProj.Image")));
+            this.btnOpenProj.Location = new System.Drawing.Point(49, 12);
             this.btnOpenProj.Name = "btnOpenProj";
             this.btnOpenProj.Size = new System.Drawing.Size(30, 23);
             this.btnOpenProj.TabIndex = 3;
-            this.btnOpenProj.Text = "PP";
             this.toolTip1.SetToolTip(this.btnOpenProj, "Open Project Path");
             this.btnOpenProj.UseVisualStyleBackColor = true;
             this.btnOpenProj.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // btnQuickSwitch
-            // 
-            this.btnQuickSwitch.Location = new System.Drawing.Point(49, 12);
-            this.btnQuickSwitch.Name = "btnQuickSwitch";
-            this.btnQuickSwitch.Size = new System.Drawing.Size(17, 23);
-            this.btnQuickSwitch.TabIndex = 2;
-            this.btnQuickSwitch.Text = "S";
-            this.toolTip1.SetToolTip(this.btnQuickSwitch, "Switch View");
-            this.btnQuickSwitch.UseVisualStyleBackColor = true;
-            this.btnQuickSwitch.Click += new System.EventHandler(this.btnQuickSwitch_Click);
             // 
             // btnQuickStartGUI
             // 

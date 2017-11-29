@@ -105,7 +105,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\core.png" />
+    <Content Include="Resources\folderICo.jpg" />
     <Content Include="Resources\gui.png" />
+    <Content Include="Resources\photo.jpg" />
     <Content Include="Resources\Switch.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
