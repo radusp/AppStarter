@@ -10,7 +10,7 @@ namespace SmartAppStarter
     public partial class Form1 : Form
     {
         int currentPosQuickView = 700;
-        const int widthOfQuickView = 370;
+        const int widthOfQuickView = 373;
         const string nameConfigFileForPath = @"ProjectConfig.sas";       
         bool SandBoxValidator = false;
         CoreParameters diskloaderProps;
@@ -18,6 +18,7 @@ namespace SmartAppStarter
         MakePyParameters makePiPropsCompile;
         bool projectPathConfigExists = false;       
         AutoCompleteStringCollection componentSource = new AutoCompleteStringCollection();
+        bool isQuickViewOn = false;
 
         Point mousePosRelease;
         Point mousePosClick;
@@ -62,7 +63,9 @@ namespace SmartAppStarter
                         "compile",
                         "clean",
                         "install",
-                        "configure"
+                        "configure",
+                        "update",
+                        "deploy"
                             });
 
             txtMakepyCMD.AutoCompleteCustomSource = makepyCmdSource;
@@ -133,7 +136,7 @@ namespace SmartAppStarter
                     }
                 }
             }
-            catch (Exception ee)
+            catch (Exception)
             {
                 MessageBox.Show("Something happened while parsing the external files. You will not have autocomplete for the component field.");
             } 
@@ -252,7 +255,7 @@ namespace SmartAppStarter
             {
                 Process.Start(startInfo);
             }
-            catch (Exception ee)
+            catch (Exception )
             {
                 MessageBox.Show("A project must be loaded first");
             }
@@ -291,7 +294,7 @@ namespace SmartAppStarter
             {
                 Process.Start(startInfo);
             }
-            catch (Exception ee)
+            catch (Exception )
             {
                 MessageBox.Show("A project must be loaded first");
             }
@@ -401,8 +404,17 @@ namespace SmartAppStarter
 
         private void btnQuickSwitch_Click(object sender, EventArgs e)
         {
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            Size = new System.Drawing.Size(661, 240);
+            if (!isQuickViewOn)
+            {
+                btnSwitchToQuickView_Click(null, null);
+            }
+            else
+            {
+                this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+                Size = new System.Drawing.Size(588, 225);
+                isQuickViewOn = false;
+            }
+
         }
 
         private void btnSwitchToQuickView_Click(object sender, EventArgs e)
@@ -411,6 +423,7 @@ namespace SmartAppStarter
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new Point(currentPosQuickView, 0);
             this.TopMost = true;
+            isQuickViewOn = true;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -467,7 +480,7 @@ namespace SmartAppStarter
             {
                 p.Start();
             }
-            catch (Exception ee)
+            catch (Exception )
             {
                 MessageBox.Show("A project must be loaded first");
             }
@@ -518,7 +531,7 @@ namespace SmartAppStarter
             {
                 this.Location = new Point(finPosWidth, 0);
             }
-            catch (Exception eee)
+            catch (Exception)
             {
                 currentPosQuickView = 700;
             }
@@ -538,5 +551,16 @@ namespace SmartAppStarter
         {
             Application.Exit();
         }
+
+        private void txtMakepyCMD_Enter(object sender, EventArgs e)
+        {
+            txtMakepyCMD.Text = "";
+        }
+
+        private void txtComponent_Enter(object sender, EventArgs e)
+        {
+            txtComponent.Text = "";
+        }
+
     }
 }

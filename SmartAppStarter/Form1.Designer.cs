@@ -92,9 +92,9 @@
             // 
             // btnStartCoreDiskloader
             // 
-            this.btnStartCoreDiskloader.Location = new System.Drawing.Point(6, 114);
+            this.btnStartCoreDiskloader.Location = new System.Drawing.Point(5, 97);
             this.btnStartCoreDiskloader.Name = "btnStartCoreDiskloader";
-            this.btnStartCoreDiskloader.Size = new System.Drawing.Size(94, 23);
+            this.btnStartCoreDiskloader.Size = new System.Drawing.Size(68, 23);
             this.btnStartCoreDiskloader.TabIndex = 2;
             this.btnStartCoreDiskloader.Text = "Start Core";
             this.btnStartCoreDiskloader.UseVisualStyleBackColor = true;
@@ -113,14 +113,14 @@
             this.gbxDiskloader.Controls.Add(this.btnStartCoreDiskloader);
             this.gbxDiskloader.Location = new System.Drawing.Point(224, 51);
             this.gbxDiskloader.Name = "gbxDiskloader";
-            this.gbxDiskloader.Size = new System.Drawing.Size(206, 143);
+            this.gbxDiskloader.Size = new System.Drawing.Size(169, 121);
             this.gbxDiskloader.TabIndex = 3;
             this.gbxDiskloader.TabStop = false;
             this.gbxDiskloader.Text = "Core";
             // 
             // btnLoadCore
             // 
-            this.btnLoadCore.Location = new System.Drawing.Point(154, 113);
+            this.btnLoadCore.Location = new System.Drawing.Point(120, 97);
             this.btnLoadCore.Name = "btnLoadCore";
             this.btnLoadCore.Size = new System.Drawing.Size(42, 23);
             this.btnLoadCore.TabIndex = 10;
@@ -130,7 +130,7 @@
             // 
             // btnSaveCore
             // 
-            this.btnSaveCore.Location = new System.Drawing.Point(106, 113);
+            this.btnSaveCore.Location = new System.Drawing.Point(76, 97);
             this.btnSaveCore.Name = "btnSaveCore";
             this.btnSaveCore.Size = new System.Drawing.Size(42, 23);
             this.btnSaveCore.TabIndex = 9;
@@ -140,29 +140,29 @@
             // 
             // txtIP
             // 
-            this.txtIP.Location = new System.Drawing.Point(58, 77);
+            this.txtIP.Location = new System.Drawing.Point(58, 71);
             this.txtIP.Name = "txtIP";
-            this.txtIP.Size = new System.Drawing.Size(129, 20);
+            this.txtIP.Size = new System.Drawing.Size(104, 20);
             this.txtIP.TabIndex = 22;
             // 
             // txtDi
             // 
-            this.txtDi.Location = new System.Drawing.Point(58, 50);
+            this.txtDi.Location = new System.Drawing.Point(58, 44);
             this.txtDi.Name = "txtDi";
-            this.txtDi.Size = new System.Drawing.Size(129, 20);
+            this.txtDi.Size = new System.Drawing.Size(104, 20);
             this.txtDi.TabIndex = 21;
             // 
             // txtD
             // 
-            this.txtD.Location = new System.Drawing.Point(58, 26);
+            this.txtD.Location = new System.Drawing.Point(58, 20);
             this.txtD.Name = "txtD";
-            this.txtD.Size = new System.Drawing.Size(129, 20);
+            this.txtD.Size = new System.Drawing.Size(104, 20);
             this.txtD.TabIndex = 20;
             // 
             // lblIp
             // 
             this.lblIp.AutoSize = true;
-            this.lblIp.Location = new System.Drawing.Point(17, 80);
+            this.lblIp.Location = new System.Drawing.Point(17, 74);
             this.lblIp.Name = "lblIp";
             this.lblIp.Size = new System.Drawing.Size(17, 13);
             this.lblIp.TabIndex = 5;
@@ -171,7 +171,7 @@
             // lblDi
             // 
             this.lblDi.AutoSize = true;
-            this.lblDi.Location = new System.Drawing.Point(17, 53);
+            this.lblDi.Location = new System.Drawing.Point(17, 47);
             this.lblDi.Name = "lblDi";
             this.lblDi.Size = new System.Drawing.Size(18, 13);
             this.lblDi.TabIndex = 4;
@@ -180,7 +180,7 @@
             // lblD
             // 
             this.lblD.AutoSize = true;
-            this.lblD.Location = new System.Drawing.Point(17, 26);
+            this.lblD.Location = new System.Drawing.Point(17, 20);
             this.lblD.Name = "lblD";
             this.lblD.Size = new System.Drawing.Size(16, 13);
             this.lblD.TabIndex = 3;
@@ -195,6 +195,7 @@
             this.lblStatusPath.Size = new System.Drawing.Size(48, 13);
             this.lblStatusPath.TabIndex = 4;
             this.lblStatusPath.Text = "NOT OK";
+            this.toolTip1.SetToolTip(this.lblStatusPath, "Status Of Current Loaded Project");
             this.lblStatusPath.Visible = false;
             // 
             // grpLoadProject
@@ -205,14 +206,14 @@
             this.grpLoadProject.Controls.Add(this.txtProjectPath);
             this.grpLoadProject.Location = new System.Drawing.Point(9, 51);
             this.grpLoadProject.Name = "grpLoadProject";
-            this.grpLoadProject.Size = new System.Drawing.Size(206, 143);
+            this.grpLoadProject.Size = new System.Drawing.Size(206, 121);
             this.grpLoadProject.TabIndex = 5;
             this.grpLoadProject.TabStop = false;
             this.grpLoadProject.Text = "LoadProject";
             // 
             // btnSwitchToQuickView
             // 
-            this.btnSwitchToQuickView.Location = new System.Drawing.Point(12, 98);
+            this.btnSwitchToQuickView.Location = new System.Drawing.Point(12, 96);
             this.btnSwitchToQuickView.Name = "btnSwitchToQuickView";
             this.btnSwitchToQuickView.Size = new System.Drawing.Size(182, 23);
             this.btnSwitchToQuickView.TabIndex = 3;
@@ -229,16 +230,16 @@
             this.groupBox1.Controls.Add(this.txtGuiIp);
             this.groupBox1.Controls.Add(this.lblGuiPort);
             this.groupBox1.Controls.Add(this.lblGUIIP);
-            this.groupBox1.Location = new System.Drawing.Point(436, 51);
+            this.groupBox1.Location = new System.Drawing.Point(401, 51);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(205, 143);
+            this.groupBox1.Size = new System.Drawing.Size(164, 121);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "GUI";
             // 
             // btnLoadGui
             // 
-            this.btnLoadGui.Location = new System.Drawing.Point(144, 113);
+            this.btnLoadGui.Location = new System.Drawing.Point(114, 96);
             this.btnLoadGui.Name = "btnLoadGui";
             this.btnLoadGui.Size = new System.Drawing.Size(42, 23);
             this.btnLoadGui.TabIndex = 11;
@@ -248,7 +249,7 @@
             // 
             // btnSaveGui
             // 
-            this.btnSaveGui.Location = new System.Drawing.Point(96, 113);
+            this.btnSaveGui.Location = new System.Drawing.Point(70, 96);
             this.btnSaveGui.Name = "btnSaveGui";
             this.btnSaveGui.Size = new System.Drawing.Size(42, 23);
             this.btnSaveGui.TabIndex = 11;
@@ -259,9 +260,9 @@
             // 
             // btnStartGui
             // 
-            this.btnStartGui.Location = new System.Drawing.Point(12, 114);
+            this.btnStartGui.Location = new System.Drawing.Point(5, 96);
             this.btnStartGui.Name = "btnStartGui";
-            this.btnStartGui.Size = new System.Drawing.Size(78, 23);
+            this.btnStartGui.Size = new System.Drawing.Size(63, 23);
             this.btnStartGui.TabIndex = 9;
             this.btnStartGui.Text = "Start GUI";
             this.btnStartGui.UseVisualStyleBackColor = true;
@@ -269,22 +270,22 @@
             // 
             // txtGuiPort
             // 
-            this.txtGuiPort.Location = new System.Drawing.Point(58, 52);
+            this.txtGuiPort.Location = new System.Drawing.Point(56, 46);
             this.txtGuiPort.Name = "txtGuiPort";
-            this.txtGuiPort.Size = new System.Drawing.Size(129, 20);
+            this.txtGuiPort.Size = new System.Drawing.Size(99, 20);
             this.txtGuiPort.TabIndex = 1;
             // 
             // txtGuiIp
             // 
-            this.txtGuiIp.Location = new System.Drawing.Point(58, 26);
+            this.txtGuiIp.Location = new System.Drawing.Point(56, 20);
             this.txtGuiIp.Name = "txtGuiIp";
-            this.txtGuiIp.Size = new System.Drawing.Size(129, 20);
+            this.txtGuiIp.Size = new System.Drawing.Size(99, 20);
             this.txtGuiIp.TabIndex = 0;
             // 
             // lblGuiPort
             // 
             this.lblGuiPort.AutoSize = true;
-            this.lblGuiPort.Location = new System.Drawing.Point(10, 56);
+            this.lblGuiPort.Location = new System.Drawing.Point(9, 50);
             this.lblGuiPort.Name = "lblGuiPort";
             this.lblGuiPort.Size = new System.Drawing.Size(48, 13);
             this.lblGuiPort.TabIndex = 1;
@@ -293,7 +294,7 @@
             // lblGUIIP
             // 
             this.lblGUIIP.AutoSize = true;
-            this.lblGUIIP.Location = new System.Drawing.Point(11, 28);
+            this.lblGUIIP.Location = new System.Drawing.Point(9, 25);
             this.lblGUIIP.Name = "lblGUIIP";
             this.lblGUIIP.Size = new System.Drawing.Size(39, 13);
             this.lblGUIIP.TabIndex = 0;
@@ -313,7 +314,7 @@
             this.grpQuickView.Controls.Add(this.btnQuickStartCore);
             this.grpQuickView.Location = new System.Drawing.Point(7, -1);
             this.grpQuickView.Name = "grpQuickView";
-            this.grpQuickView.Size = new System.Drawing.Size(343, 40);
+            this.grpQuickView.Size = new System.Drawing.Size(346, 40);
             this.grpQuickView.TabIndex = 7;
             this.grpQuickView.TabStop = false;
             this.grpQuickView.Text = "Quick View";
@@ -323,7 +324,7 @@
             this.btnQuitApp.Font = new System.Drawing.Font("Segoe Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitApp.ForeColor = System.Drawing.Color.Maroon;
             this.btnQuitApp.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnQuitApp.Location = new System.Drawing.Point(320, 11);
+            this.btnQuitApp.Location = new System.Drawing.Point(325, 11);
             this.btnQuitApp.Name = "btnQuitApp";
             this.btnQuitApp.Size = new System.Drawing.Size(18, 23);
             this.btnQuitApp.TabIndex = 12;
@@ -336,7 +337,7 @@
             // 
             // btnMoveForm
             // 
-            this.btnMoveForm.Location = new System.Drawing.Point(263, 11);
+            this.btnMoveForm.Location = new System.Drawing.Point(274, 11);
             this.btnMoveForm.Name = "btnMoveForm";
             this.btnMoveForm.Size = new System.Drawing.Size(33, 23);
             this.btnMoveForm.TabIndex = 11;
@@ -348,23 +349,27 @@
             // 
             // txtMakepyCMD
             // 
-            this.txtMakepyCMD.Location = new System.Drawing.Point(153, 13);
+            this.txtMakepyCMD.Location = new System.Drawing.Point(161, 13);
             this.txtMakepyCMD.Name = "txtMakepyCMD";
             this.txtMakepyCMD.Size = new System.Drawing.Size(48, 20);
             this.txtMakepyCMD.TabIndex = 7;
+            this.txtMakepyCMD.Text = "cmd";
             this.toolTip1.SetToolTip(this.txtMakepyCMD, "Make.py command that you want to execute");
+            this.txtMakepyCMD.Enter += new System.EventHandler(this.txtMakepyCMD_Enter);
             // 
             // txtComponent
             // 
-            this.txtComponent.Location = new System.Drawing.Point(207, 13);
+            this.txtComponent.Location = new System.Drawing.Point(213, 13);
             this.txtComponent.Name = "txtComponent";
-            this.txtComponent.Size = new System.Drawing.Size(51, 20);
+            this.txtComponent.Size = new System.Drawing.Size(57, 20);
             this.txtComponent.TabIndex = 8;
+            this.txtComponent.Text = "component";
             this.toolTip1.SetToolTip(this.txtComponent, "Component that You want to use");
+            this.txtComponent.Enter += new System.EventHandler(this.txtComponent_Enter);
             // 
             // btnQuickSwitch
             // 
-            this.btnQuickSwitch.Location = new System.Drawing.Point(302, 11);
+            this.btnQuickSwitch.Location = new System.Drawing.Point(308, 11);
             this.btnQuickSwitch.Name = "btnQuickSwitch";
             this.btnQuickSwitch.Size = new System.Drawing.Size(17, 23);
             this.btnQuickSwitch.TabIndex = 2;
@@ -376,7 +381,7 @@
             // btnCompile
             // 
             this.btnCompile.Image = ((System.Drawing.Image)(resources.GetObject("btnCompile.Image")));
-            this.btnCompile.Location = new System.Drawing.Point(118, 12);
+            this.btnCompile.Location = new System.Drawing.Point(126, 12);
             this.btnCompile.Name = "btnCompile";
             this.btnCompile.Size = new System.Drawing.Size(31, 23);
             this.btnCompile.TabIndex = 9;
@@ -387,7 +392,7 @@
             // btnPathToBin
             // 
             this.btnPathToBin.Image = ((System.Drawing.Image)(resources.GetObject("btnPathToBin.Image")));
-            this.btnPathToBin.Location = new System.Drawing.Point(82, 12);
+            this.btnPathToBin.Location = new System.Drawing.Point(91, 12);
             this.btnPathToBin.Name = "btnPathToBin";
             this.btnPathToBin.Size = new System.Drawing.Size(32, 23);
             this.btnPathToBin.TabIndex = 4;
@@ -398,7 +403,7 @@
             // btnOpenProj
             // 
             this.btnOpenProj.Image = ((System.Drawing.Image)(resources.GetObject("btnOpenProj.Image")));
-            this.btnOpenProj.Location = new System.Drawing.Point(49, 12);
+            this.btnOpenProj.Location = new System.Drawing.Point(58, 12);
             this.btnOpenProj.Name = "btnOpenProj";
             this.btnOpenProj.Size = new System.Drawing.Size(30, 23);
             this.btnOpenProj.TabIndex = 3;
@@ -408,9 +413,10 @@
             // 
             // btnQuickStartGUI
             // 
-            this.btnQuickStartGUI.Location = new System.Drawing.Point(28, 12);
+            this.btnQuickStartGUI.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnQuickStartGUI.BackgroundImage")));
+            this.btnQuickStartGUI.Location = new System.Drawing.Point(34, 12);
             this.btnQuickStartGUI.Name = "btnQuickStartGUI";
-            this.btnQuickStartGUI.Size = new System.Drawing.Size(18, 23);
+            this.btnQuickStartGUI.Size = new System.Drawing.Size(24, 23);
             this.btnQuickStartGUI.TabIndex = 1;
             this.btnQuickStartGUI.Text = "G";
             this.toolTip1.SetToolTip(this.btnQuickStartGUI, "Start GUI");
@@ -419,11 +425,12 @@
             // 
             // btnQuickStartCore
             // 
+            this.btnQuickStartCore.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnQuickStartCore.BackgroundImage")));
+            this.btnQuickStartCore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnQuickStartCore.Location = new System.Drawing.Point(6, 12);
             this.btnQuickStartCore.Name = "btnQuickStartCore";
-            this.btnQuickStartCore.Size = new System.Drawing.Size(18, 23);
+            this.btnQuickStartCore.Size = new System.Drawing.Size(30, 23);
             this.btnQuickStartCore.TabIndex = 0;
-            this.btnQuickStartCore.Text = "C";
             this.toolTip1.SetToolTip(this.btnQuickStartCore, "Start Core");
             this.btnQuickStartCore.UseVisualStyleBackColor = true;
             this.btnQuickStartCore.Click += new System.EventHandler(this.btnQuickStartCore_Click);
@@ -433,12 +440,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(645, 205);
+            this.ClientSize = new System.Drawing.Size(572, 181);
             this.Controls.Add(this.grpQuickView);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpLoadProject);
             this.Controls.Add(this.gbxDiskloader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "SmartAppStarter";

@@ -104,11 +104,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\core.png" />
     <Content Include="Resources\folderICo.jpg" />
-    <Content Include="Resources\gui.png" />
+    <Content Include="Resources\gui_icon_128_lighter.jpg" />
+    <Content Include="Resources\nuke.jpg" />
     <Content Include="Resources\photo.jpg" />
-    <Content Include="Resources\Switch.png" />
+    <Content Include="Resources\sdkWeQube.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
