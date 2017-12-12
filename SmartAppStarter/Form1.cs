@@ -430,7 +430,14 @@ namespace SmartAppStarter
         {
             if (SandBoxValidator == true)
             {
-                Process.Start(Util.myPaths.projectPath);
+                try
+                {
+                    Process.Start(Util.myPaths.projectPath);
+                }
+                catch
+                {
+                    MessageBox.Show("Can't open Path to Project Folder");
+                }
             }
             else
             {
@@ -442,7 +449,14 @@ namespace SmartAppStarter
         {
             if (SandBoxValidator == true)
             {
-                Process.Start(Util.myPaths.pathToSandboxInstallBinFolder);
+                try
+                {
+                    Process.Start(Util.myPaths.pathToSandboxInstallBinFolder);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Can't open Path to BIN Folder");
+                }
             }
             else
             {
@@ -554,13 +568,19 @@ namespace SmartAppStarter
 
         private void txtMakepyCMD_Enter(object sender, EventArgs e)
         {
-            txtMakepyCMD.Text = "";
+            if (txtMakepyCMD.Text.Contains("cmd"))
+            {
+                txtMakepyCMD.Text = "";
+            }
         }
 
         private void txtComponent_Enter(object sender, EventArgs e)
         {
-            txtComponent.Text = "";
+            if (txtComponent.Text.Contains("component"))
+            {
+                txtComponent.Text = "";
+            }
+            
         }
-
     }
 }
