@@ -75,10 +75,10 @@ namespace SmartAppStarter
 
         private void btnLoadProjPath_Click(object sender, EventArgs e)
         {
-            Util.clearAllPaths();
             DialogResult result = folderBrowserDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
+                Util.clearAllPaths();
                 parseReceivedPath();
             }
         }
